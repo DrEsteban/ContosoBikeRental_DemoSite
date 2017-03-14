@@ -1,0 +1,3 @@
+[submodule "Bikes"]
+	path = Bikes
+	url = https://github.com/ContosoBikeRental/Bikes.git

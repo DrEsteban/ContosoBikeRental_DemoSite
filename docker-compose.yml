@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  demosite:
+    build: ./
+    environment:
+      - BIKES_SERVICE_URI=http://bikes
+    links:
+      - bikes
+    depends_on:
+      - bikes
+    ports:
+      - "8080:80"    
+
+  bikes:
+    build: ./Bikes/
+    environment:
+        - MONGO_DB_CONNECTION_STRING=< put connection string here >
+        - MONGO_DB_COLLECTION=bikes
+    ports:
+        - "80"

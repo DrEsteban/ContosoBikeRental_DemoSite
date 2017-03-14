@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for demoing Contoso Bikes in a website
+name: contoso-demosite
+version: 0.1.0

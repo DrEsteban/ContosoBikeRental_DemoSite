@@ -1,0 +1,35 @@
+# Default values for contoso.bikerental.bikes.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+image:
+  repository: stevelas-microsoft.azurecr.io
+  tag: latest
+  pullPolicy: Always
+  repoCredsSecretName: demoregistry
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+serviceType: LoadBalancer
+
+contoso-bikerental-bikes:
+  replicaCount: 1
+  image:
+    repository: stevelas-microsoft.azurecr.io
+    tag: latest
+    pullPolicy: Always
+    repoCredsSecretName: demoregistry
+  mongo:
+    collection: bikes
+    connectionString: < put DocumentDB connection string here >
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi

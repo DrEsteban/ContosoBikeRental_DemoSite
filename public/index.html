@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body style="margin-left:10px; margin-right:10px;">
+    <div ng-controller="MainController">
+        <h2>Contoso BikeSharing</h2>
+
+        <div class="row">
+            <div class="col-xs-10">
+                <div ng-repeat="message in messages track by $index">
+                    <span class="message" ng-style="getStyle(message)">{{message}}</span>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="row">
+                    <input class="bikeIdInput" type="text" ng-model="bikeId" name="bikeId" ng-required="true"/>
+                    <button class="btn btn-md" ng-click="reserveBike()">Reserve BikeID</button>
+                    <button class="btn btn-md" ng-click="clearBike()">Return BikeID</button>
+                </div>
+                <div class="row">
+                    <br/>
+                    <span>My Bikes</span>
+                    <div ng-repeat="bike in myBikes track by $index">
+                        <span class="message">{{bike}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
